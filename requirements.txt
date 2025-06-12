@@ -1,0 +1,25 @@
+# Core Libraries
+python-dotenv
+requests
+pymongo
+streamlit
+
+# LangChain Ecosystem
+langchain
+langgraph
+langchain-core
+langchain-google-genai
+langchain-groq
+
+# Logging
+loguru  # or use 'logging' built-in, but if you used a custom setup
+
+# For type annotations and typing support
+typing-extensions
+
+# If using GPU or specific ML libraries (not shown in your code, but common in LangChain apps)
+# torch
+# transformers
+
+# Optional: For parsing/clean formatting
+rich
