@@ -4,14 +4,21 @@ from langchain_core.messages import HumanMessage
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langgraph.prebuilt import create_react_agent
 from utils_function.model_llm import llm 
-from tools_function.reciepy_agent_tool import fetch_deshname, recipy_Generator
-from tools_function.human_feedback_tool import human_feedback
+# from tools_function.reciepy_agent_tool import fetch_deshname, recipy_Generator
+from tools_function.reciepy_agent_tool import RecipyGeneratorTool, FetchDishNameTool
+# from tools_function.human_feedback_tool import human_feedback
+from tools_function.human_feedback_tool import HumanFeedbackTool
 from logger_config.logger_config import logger
 # Load environment variables
 load_dotenv()
 
 # Tools used in this agent
-tools = [fetch_deshname, recipy_Generator, human_feedback]
+# tools = [fetch_deshname, recipy_Generator, human_feedback]
+tools = [
+    RecipyGeneratorTool(),
+    FetchDishNameTool(),
+    HumanFeedbackTool()
+]
 
 # ---------------------
 # Recipe Chat Agent Function

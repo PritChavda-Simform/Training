@@ -3,15 +3,24 @@ from dotenv import load_dotenv
 from langchain_core.messages import HumanMessage
 from langgraph.prebuilt import create_react_agent
 from utils_function.model_llm import llm 
-from tools_function.music_agent_tools import mood_to_genre, fetch_playlist, fetch_song
-from tools_function.human_feedback_tool import human_feedback
+# from tools_function.music_agent_tools import mood_to_genre, fetch_playlist, fetch_song
+from tools_function.music_agent_tools import MoodToGenreTool, FetchPlaylistTool, FetchSongTool
+# from tools_function.human_feedback_tool import human_feedback
+from tools_function.human_feedback_tool import HumanFeedbackTool
 from logger_config.logger_config import logger
 
 # Load environment variables
 load_dotenv()
 
 # Tools used by the music agent
-tools = [mood_to_genre, fetch_song, fetch_playlist, human_feedback]
+# tools = [mood_to_genre, fetch_song, fetch_playlist, human_feedback]
+tools = [
+    MoodToGenreTool(),
+    FetchSongTool(),
+    FetchPlaylistTool(),
+    HumanFeedbackTool()
+]
+
 
 # ---------------------
 # Music Chat Agent Function

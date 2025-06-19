@@ -1,25 +1,13 @@
-# Core Libraries
-python-dotenv
-requests
-pymongo
-streamlit
-
-# LangChain Ecosystem
-langchain
-langgraph
-langchain-core
-langchain-google-genai
-langchain-groq
-
-# Logging
-loguru  # or use 'logging' built-in, but if you used a custom setup
-
-# For type annotations and typing support
+langchain==0.3.25
+langchain_core==0.3.65
+langchain_google_genai==2.1.5
+langchain_groq==0.3.2
+langfuse==3.0.3
+langgraph==0.4.8
+pymongo==4.13.2
+python-dotenv==1.1.0
+Requests==2.32.4
+streamlit==1.45.1
+loguru
 typing-extensions
-
-# If using GPU or specific ML libraries (not shown in your code, but common in LangChain apps)
-# torch
-# transformers
-
-# Optional: For parsing/clean formatting
 rich

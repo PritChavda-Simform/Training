@@ -42,10 +42,8 @@ def genral_agent(state: AgentState) -> AgentState:
     try:
         logger.info("Calling general agent with state: %s", state)
         result = genral_run_chat(state["messages"], state["human_feedback"])
-        final_msg = result["messages"][-1]
-        logger.info("General agent final message: %s", final_msg)
-        logger.debug("Type of final message: %s", type(final_msg))
-        return {"messages": [final_msg]}
+        logger.info("General agent final message: %s", result)
+        return {"messages": [result]}
     except Exception as e:
         logger.exception("Exception in genral_agent: %s", e)
         raise

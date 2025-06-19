@@ -3,16 +3,21 @@ from dotenv import load_dotenv
 from langchain_core.messages import HumanMessage
 from langgraph.prebuilt import create_react_agent
 from utils_function.model_llm import llm 
-from tools_function.movie_agent_tools import movie_info, movie_playlist, movie_recommender
-from tools_function.human_feedback_tool import human_feedback
+# from tools_function.movie_agent_tools import movie_info, movie_playlist, movie_recommender
 from logger_config.logger_config import logger
+from tools_function.movie_agent_tools import MovieInfoTool, MoviePlaylistTool, MovieRecommenderTool
+# from tools_function.human_feedback_tool import human_feedback
+from tools_function.human_feedback_tool import HumanFeedbackTool
+
+
+
 
 # Load environment variables
 load_dotenv()
 
 # Tools used by the agent
-tools = [movie_info, movie_playlist, movie_recommender, human_feedback]
-
+# tools = [movie_info, movie_playlist, movie_recommender, human_feedback]
+tools = [MovieInfoTool(), MoviePlaylistTool(), MovieRecommenderTool(), HumanFeedbackTool()]
 # ---------------------
 # Movie Chat Agent Function
 # ---------------------
